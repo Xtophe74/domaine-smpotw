@@ -6,6 +6,12 @@
   <title>Domaine Déjà Pris 💎</title>
   <link href="https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&display=swap" rel="stylesheet">
   <style>
+    /* Preload font to avoid FOUT */
+    @font-face {
+      font-family: 'Herr Von Muellerhoff';
+      font-display: block;
+    }
+    
     body {
       margin: 0;
       height: 100vh;
@@ -37,6 +43,9 @@
       padding: 0 30px;
       text-shadow: 0 0 12px gold, 2px 2px 8px #fff;
       z-index: 1;
+      font-family: 'Herr Von Muellerhoff', cursive;
+      opacity: 0;
+      animation: fadeInText 1s ease-in-out 0.5s forwards;
     }
     
     .diamond-container {
@@ -61,6 +70,11 @@
     
     .rotor-y {
       animation: spinY 15s infinite linear;
+    }
+    
+    @keyframes fadeInText {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
     
     @keyframes spinY {
